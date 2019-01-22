@@ -8,5 +8,8 @@
             "email": "dipakmdhrm@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {"DIExample\\": "src/"}
+    }
 }
