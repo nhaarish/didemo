@@ -1,9 +1,7 @@
 <?php
 
-$config = [
-  'dsn' => 'sqlite:' . __DIR__ . '/data/database.sqlite',
-  'hostname' => 'smtp.blogtrottr.com',
-  'smtp_user' => 'smtpuser',
-  'smtp_password' => 'smtppass',
-  'smtp_port' => '465',
-];
+$container['dsn'] = 'sqlite:' . __DIR__ . '/data/database.sqlite';
+$container['hostname'] = 'smtp.blogtrottr.com';
+$container['smtp_user'] = 'smtpuser';
+$container['smtp_password'] ='smtppass';
+$container['smtp_port'] = '465';

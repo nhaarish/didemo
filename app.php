@@ -1,13 +1,11 @@
 <?php
 
 require __DIR__ . '/vendor/autoload.php';
+
+use Pimple\Container;
+
+$container = new Container();
 require __DIR__ . '/config.php';
+require __DIR__ . '/services.php';
 
-use DIExample\SubscribeManager;
-use DIExample\Mailer;
-
-$mailer = new Mailer($config);
-$pdo = new \PDO($config['dsn']);
-
-$subscriberManager = new SubscribeManager($pdo,$mailer);
-$subscriberManager->notifySubscribers();
+$container['subscribemanager']->notifySubscribers();
