@@ -2,20 +2,18 @@
 
 namespace DIExample;
 
-use PDO;
 use DIExample\Mailer;
+use PDO;
 
 class SubscribeManager {
   
 	protected $pdos;
-	protected $config;
 	protected $mailer;
 
-  public function __construct($config) {
+  public function __construct(PDO $pdo, Mailer $mailer) {
 		// Get list of subscribers from datasource.
-		$this->config = $config;
-		$this->pdos = new PDO($this->config['dsn']);
-		$this->mailer =  new Mailer($this->config);
+		$this->pdos = $pdo;
+		$this->mailer = $mailer;
   }
 
   public function notifySubscribers() {
